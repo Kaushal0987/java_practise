@@ -1,7 +1,7 @@
-public class receiver {
+public class Receiver {
  public static void main(String[]args)
  {
-  attach a = new attach();
+  Attach a = new Attach();
   double rollNo = a.id();
   System.out.println(rollNo);
  }

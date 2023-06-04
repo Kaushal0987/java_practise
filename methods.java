@@ -1,5 +1,5 @@
-public class methods {
- public static void main(String []args)
+public class Methods {
+ public static void main(String[]args)
  {
    String name = addSurname("kaushal");
    System.out.println(name.toUpperCase());
@@ -9,3 +9,4 @@ public class methods {
  {
    return s + "joshi";
  }
+}
