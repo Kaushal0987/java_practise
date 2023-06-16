@@ -5,9 +5,9 @@ public class Length {
 
         Scanner in = new Scanner(System.in);
         System.out.print("Enter the length in inche: ");
-        double inche = in.nextDouble();
+        double inch = in.nextDouble();
 
-        double meter = inche * 0.0254;
+        double meter = inch * 0.0254;
 
         System.out.print("length in meter: " + meter);
 

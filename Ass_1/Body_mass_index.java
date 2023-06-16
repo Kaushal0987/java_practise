@@ -5,10 +5,10 @@ public class Body_mass_index{
   Scanner in = new Scanner(System.in);
 
   System.out.print("Enter weight in pounds: ");
-  double wt = in.nextInt();
+  double wt = in.nextDouble();
 
   System.out.print("Enter height in inches: ");
-  double ht = in.nextInt();
+  double ht = in.nextDouble();
 
   double BMI = 703.0*(wt/(ht*ht));
 

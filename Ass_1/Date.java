@@ -4,7 +4,7 @@ public class Date {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        System.out.print("Enter munites to be converted: ");
+        System.out.print("Enter minutes to be converted: ");
         int min = in.nextInt();
 
         int years = min / 525600;
