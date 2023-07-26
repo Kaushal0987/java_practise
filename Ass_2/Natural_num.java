@@ -11,7 +11,7 @@ public class Natural_num {
 
   for(int i=0; i<n; i++)
   {
-   System.out.println("\t"+i);
+   System.out.println(i);
    sum += i;
   }
 

@@ -9,7 +9,7 @@ public class Odd {
   System.out.print("Enter the value of n: ");
   int n = in.nextInt();
 
-  for(int i=1; i<n; i+=2)
+  for(int i=1; i<=n; i+=2)
   {
    sum += i;
    System.out.println("\t"+i);

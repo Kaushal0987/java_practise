@@ -4,10 +4,10 @@ public class Integer_mux {
   
   Scanner in = new Scanner (System.in);
 
-  System.out.print("Enter an integer: \n");
+  System.out.print("Enter an integer: ");
   int n = in.nextInt();
 
-  System.out.println("Enter the limit of multiplication: ");
+  System.out.print("Enter the limit of multiplication: ");
   int l = in.nextInt();
 
   for(int i=0; i<=l; i++)

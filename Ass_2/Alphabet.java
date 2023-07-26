@@ -7,7 +7,7 @@ public class Alphabet {
   System.out.print("Enter an alphabet: ");
   char c = in.next().charAt(0);
 
-  if(Character.isLetterOrDigit(c) == false)
+  if(Character.isLetter(c) == false)
   {
    System.out.println("wrong input");
   }
