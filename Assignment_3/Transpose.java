@@ -3,7 +3,7 @@ public class Transpose {
  public static void main(String []args){
 
   Scanner in = new Scanner(System.in);
-  int arr_trans[][] = new int[10][100];
+  int array[][] = new int[10][100];
   int temp=0, i, j;
 
   //input of rows and column of the matrix
@@ -16,7 +16,7 @@ public class Transpose {
   System.out.print("Enter the elements of the array: ");
   for(i=0; i<rows; i++){
    for(j=0; j<column; j++){
-    arr_trans[i][j] = in.nextInt(); 
+    array[i][j] = in.nextInt(); 
    }
   }
 
@@ -24,17 +24,17 @@ public class Transpose {
   System.out.println("The original matrix is: ");
   for(i=0; i<rows; i++){
    for(j=0; j<column; j++){
-    System.out.print(arr_trans[i][j]+"\t");
+    System.out.print(array[i][j]+"\t");
    }
    System.out.println();
   }
 
+  int transpose[][] = new int[10][100];
+
   //transpose of the matrix
   for(i=0; i<rows; i++){
    for(j=0; j<column; j++){
-    temp = arr_trans[i][j];
-    arr_trans[i][j] = arr_trans[j][i];
-    arr_trans[j][i] = temp;
+    transpose[j][i] = array[i][j];
    }
   }
 
@@ -42,7 +42,7 @@ public class Transpose {
   System.out.println("The transpose of the matrix is: ");
   for(i=0; i<rows; i++){
    for(j=0; j<column; j++){
-    System.out.print(arr_trans[i][j]+"\t");
+    System.out.print(transpose[i][j]+"\t");
    }
    System.out.println();
   }
