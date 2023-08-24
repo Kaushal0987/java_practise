@@ -6,7 +6,7 @@ public class Index_Char {
   String word = new String();
 
   System.out.print("Enter a string: ");
-  word = in.next();
+  word = in.nextLine();
 
   System.out.print("Write the index of character you want to print: ");
   int index = in.nextInt();

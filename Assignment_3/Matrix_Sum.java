@@ -19,6 +19,14 @@ public class Matrix_Sum {
    }
   }
 
+  System.out.println("Array: ");
+  for(int i=0; i<rows; i++){
+   for(int j=0; j<column; j++){
+    System.out.print(array[i][j]+"\t");
+   }
+   System.out.println();
+  }
+
   for(int i=0; i<rows; i++){
    for(int j=0; j<column; j++){
     sum+=array[i][j];

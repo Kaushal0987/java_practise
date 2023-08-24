@@ -7,17 +7,17 @@ public class String_Compare {
   String string_2 = new String();
 
   System.out.print("Enter the 1st string: ");
-  string_1 = in.next();
+  string_1 = in.nextLine();
   System.out.print("Enetr the 2nd string: ");
-  string_2 = in.next();
+  string_2 = in.nextLine();
 
   int value = string_1.compareTo(string_2);
 
   if(value==0){
-   System.out.println(string_1+">"+string_2);
+   System.out.println(string_1+" > "+string_2);
   }
   else{
-   System.out.println(string_2+">"+string_1);
+   System.out.println(string_2+" > "+string_1);
   }
  }
 }
