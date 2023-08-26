@@ -2,10 +2,10 @@ package Author;
 
 public class Book {
 	private String title;
-	private String author;
+	private Author author;
 	private double price;
 	
-	public Book(String title, String author, double price) {
+	public Book(String title, Author author, double price) {
 		this.title = title;
 		this.author = author;
 		this.price = price;
@@ -15,7 +15,7 @@ public class Book {
 		this.title = title;
 	}
 	
-	public void setauthor(String author) {
+	public void setauthor(Author author) {
 		this.author = author;
 	}
 	
@@ -27,7 +27,7 @@ public class Book {
 		return title;
 	}
 	
-	public String getauthor() {
+	public Author getauthor() {
 		return author;
 	}
 	
@@ -36,7 +36,7 @@ public class Book {
 	}
 	
 	public String toString() {
-		
+		return "Title: " + title + "\nAuthor: " + author + "\nPrice: $" + price;
 	}
 	
 }

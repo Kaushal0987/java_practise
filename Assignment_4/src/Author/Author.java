@@ -25,8 +25,8 @@ public class Author {
 			return lastName;
 	}
 	
-	public void toString() {
-		System.out.print(firstName+" "+lastName);
+	public String toString() {
+		return firstName + " " + lastName;
 	}
 		
 }

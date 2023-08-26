@@ -6,38 +6,36 @@ public class Clock {
 	private int sec;
 	
 	public Clock(){
-		hr = 12;
-		min = 0;
-		sec = 0;
+		this.hr = 12;
+		this.min = 0;
+		this.sec = 0;
 	}
 	
 	public Clock(int hr, int min, int sec) {
-		this.hr = hr;
-		this.min = min;
-		this.sec = sec;
+		setHour(hr);
+		setMinutes(min);
+		setSeconds(sec);
 	}
 	
-	public Clock(int sec) {
-		this.hr = sec/3600;
-		this.min = (sec%3600)/60;
-		this.sec = sec%60;
+	public Clock(int secSinceMidnight) {
+		setClock(secSinceMidnight);
 	}
 	
-	public void setClock(int sec) {
-		this.hr = sec/3600;
-		this.min = (sec%3600)/60;
-		this.sec = sec%60;
+	public void setClock(int secSinceMidnight) {
+		this.hr = secSinceMidnight / 3600;
+		this.min = (secSinceMidnight%3600) / 60;
+		this.sec = secSinceMidnight % 60;
 	}
 	
 	public int getHour() {
 		return hr;
 	}
 	
-	public int setMinutes() {
+	public int getMinutes() {
 		return min;
 	}
 	
-	public int setSeconds() {
+	public int getSeconds() {
 		return sec;
 	}
 	
@@ -57,13 +55,54 @@ public class Clock {
 		sec++;
 		if(sec>59) {
 			min++;
-			sec=0;
+			sec = 0;
 			if(min>59) {
-				hr++;
-				min=0;
+				hr = (hr+1) % 24;
+				min = 0;
 			}
 		}
 	}
 	
+	public void tickDown() {
+		sec--;
+		if(sec < 0) {
+			sec = 59;
+			min--;
+			if(min < 0) {
+				min = 59;
+				hr = (hr-1) % 24;
+			}
+		}
+	}
 	
+	public void addClock(Clock otherClock) {
+		hr += getHour() + otherClock.hr;
+		min += getMinutes() + otherClock.min;
+		sec += getSeconds() + otherClock.sec;
+		
+		if (sec >= 60) {
+			sec -= 60;
+			min++;
+		}
+		if (min >= 60) {
+			min -= 60;
+			hr++;
+		}
+		hr %= 24;
+	}
+	
+	public void subtractClock(Clock otherClock) {
+		int thisSeconds = this.hr *3600 + this.min *60 + this.sec;
+		int otherSeconds = otherClock.getHours() * 3600 + otherClock.getMinutes() * 60 + otherClock.getSeconds();
+
+		int subtraction = thisSeconds - otherSeconds;
+
+		if (subtraction < 0) {
+			subtraction += 86400; //24 hour in seconds.
+		}
+		return new Clock(subtraction);
+	}
+	public String toString() {
+		return String.format("(%02d:%02d:%02d)", hr, min, sec);
+	}
 }
