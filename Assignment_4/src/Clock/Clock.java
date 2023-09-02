@@ -91,9 +91,9 @@ public class Clock {
 		hr %= 24;
 	}
 	
-	public void subtractClock(Clock otherClock) {
+	public Clock subtractClock(Clock otherClock) {
 		int thisSeconds = this.hr *3600 + this.min *60 + this.sec;
-		int otherSeconds = otherClock.getHours() * 3600 + otherClock.getMinutes() * 60 + otherClock.getSeconds();
+		int otherSeconds = otherClock.getHour() * 3600 + otherClock.getMinutes() * 60 + otherClock.getSeconds();
 
 		int subtraction = thisSeconds - otherSeconds;
 
@@ -102,6 +102,7 @@ public class Clock {
 		}
 		return new Clock(subtraction);
 	}
+	
 	public String toString() {
 		return String.format("(%02d:%02d:%02d)", hr, min, sec);
 	}
